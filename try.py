@@ -1,46 +1,28 @@
+n = int(input())
+b = int(input())
+s = []
 
-"""n=int(input())
-for i in range(1,n+1):
-    for j in range(1,i+1):
-        print("*",end="") #if you wnat numbers then replace * with j;)
-    print("\n")"""
+while (n>0):
+    a = n%10
+    n//=10
+    s.append(a)
+print(s)
+add=0
+orig=0
+check =1
 
-"""n=int(input())
-x=1
-for i in range(1,n+1):
-    for s in range(1,49-i):
-        print(" ",end="")
-    for j in range(1,i+1):
-        print(x,end=" ") 
-        x=x+1 #if you want with * then replace x with * and remove x variables
-       #if ypu want a pattern like 1 \n 2 2  \n 3 3 3 then replace x with i 
-        #if you want a pattern like 1 \n 1 2  \n 1 2 3 then replace x with j 
-          
-    print("\n") """
-
-"""n=int(input())
-num=69 #assii value for printing the letters
-ch=chr(num)
-
-for i in range(1,n+1):
-    for s in range(1,49-i):
-        print(" ",end="")
-    for j in range(1,i+1):
-        ch=chr(num)
-        print(ch,end=" ") 
-    num=num+1    
-        
-    print("\n")   """
-n=int(input())
-num=69 #assii value for printing the letters
-ch=chr(num)
-
-for i in range(1,n+1):
-    
-    for j in range(1,i+1):
-        ch=chr(num)
-        print(ch,end=" ") 
-        num=num+1    
-        
-    print("\n")   
+for i in range(len(s)):
+    add+=s[i]**len(s)
+    print(add)
+    orig+=s[i]*(b**i)
+    print(orig)
+    if(s[i]>b-1):
+        print('Invalid')
+        check = 0
+        break
+if(check):
+    if(add==orig):
+         print('Yes')
+    else: 
+        print ('No')
 
